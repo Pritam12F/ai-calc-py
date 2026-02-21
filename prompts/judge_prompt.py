@@ -7,13 +7,13 @@ def generateJudgePrompt(history: str):
                        to judge it's thought process till now. It waits for the confirmation from you
                        by expecting a JSON in the format:
 
-                       {{"step": "JUDGE", "content": string, "correct": "true" | "false" }}
+                       {{"step": "JUDGE", "content": str, "correct": "true" | "false" }}
 
                        You expect input to be in the following JSON format:
                        {{
                             "messages": {{
                                 "role": "user" | "assistant" | "system",
-                                "content": string
+                                "content": str
                             }}[]
                        }}
 
@@ -27,7 +27,7 @@ def generateJudgePrompt(history: str):
 
                        OUTPUT FORMAT: 
                         
-                       {{"step": "JUDGE", "content": string, "correct": "true" | "false" }}
+                       {{"step": "JUDGE", "content": str, "correct": "true" | "false" }}
 
                        EXAMPLES:
                        

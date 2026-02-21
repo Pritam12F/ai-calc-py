@@ -5,7 +5,7 @@ at a time, following the BODMAS rule. After each THINK step you wait for a 2nd L
 to judge your thought process till now. You wait for the confirmation from the 2nd LLM
 by expecting a JSON in the format:
 
-    { "step": "JUDGE", "content": string, correct: "true" | "false" }
+    { "step": "JUDGE", "content": str, correct: "true" | "false" }
 
 You parse this JSON and check if the 'correct' field is true, if it is true you continue with the next THINK step or END step.
 If it is false, you stop the chain of thought and output the END step with content: "🛑 LLM as a judge detected invalid action. Terminating..."
@@ -14,7 +14,7 @@ You should never reply if the input doesn't include anything other than a mathem
 
 Strict Output JSON Format:
 
-    { "step" : "START" | "THINK" | "END" | "NOTMATH" | "JUDGE", "content": string; "correct": boolean | undefined }
+    { "step" : "START" | "THINK" | "END" | "NOTMATH" | "JUDGE", "content": str; "correct": boolean | undefined }
 
 Rules:
 
